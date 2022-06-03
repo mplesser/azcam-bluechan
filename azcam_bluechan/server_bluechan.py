@@ -20,6 +20,8 @@ from azcam.tools.telescope import Telescope
 from azcam_fastapi.fastapi_server import WebServer
 from azcam_webtools.status.status import Status
 
+from azcam_bluechan.ice import ICE
+
 # ****************************************************************
 # parse command line arguments
 # ****************************************************************
@@ -87,7 +89,6 @@ parfile = os.path.join(azcam.db.datafolder, "parameters", "parameters_server_blu
 NORMAL = 1
 cmdport = 2402
 azcam.db.servermode = "bluechan"
-default_tool = None
 
 # ****************************************************************
 # controller
@@ -182,6 +183,12 @@ system.set_keyword("DEWAR", "BlueChanDewar", "Dewar name")
 display = Ds9Display()
 
 # ****************************************************************
+# ICE commands
+# ****************************************************************
+ice = ICE()
+azcam.db.tools["ice"] = ice
+
+# ****************************************************************
 # read par file
 # ****************************************************************
 azcam.db.tools["parameters"].read_parfile(parfile)
@@ -192,11 +199,11 @@ azcam.db.tools["parameters"].update_pars(0, "azcamserver")
 # ****************************************************************
 cmdserver = CommandServer()
 cmdserver.port = cmdport
+cmdserver.case_insensitive = 1
 azcam.log(f"Starting cmdserver - listening on port {cmdserver.port}")
 # cmdserver.welcome_message = "Welcome - azcam-itl server"
 cmdserver.start()
-if default_tool is not None:
-    cmdserver.default_tool = azcam.db.get(default_tool)
+cmdserver.default_tool = "ice"
 
 # ****************************************************************
 # web server
