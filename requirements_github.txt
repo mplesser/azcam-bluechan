@@ -1,0 +1,13 @@
+ipython
+pyside2
+rich
+
+-e git+https://github.com/mplesser/azcam#egg=azcam
+-e git+https://github.com/mplesser/azcam-arc#egg=azcam-arc
+-e git+https://github.com/mplesser/azcam-ds9#egg=azcam-ds9
+-e git+https://github.com/mplesser/azcam-fastapi#egg=azcam-fastapi
+-e git+https://github.com/mplesser/azcam-imageserver#egg=azcam-imageserver
+-e git+https://github.com/mplesser/azcam-monitor#egg=azcam-monitor
+-e git+https://github.com/mplesser/azcam-webtools#egg=azcam-webtools
+
+-e ./azcam-bluechan
