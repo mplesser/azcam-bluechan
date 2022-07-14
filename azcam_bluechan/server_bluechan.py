@@ -94,16 +94,16 @@ azcam.db.servermode = "bluechan"
 # controller
 # ****************************************************************
 controller = ControllerArc()
-controller.timing_board = "arc22"
+controller.timing_board = "gen1"
 controller.clock_boards = ["gen1"]
 controller.video_boards = ["gen1"]
 controller.utility_board = "gen1"
 controller.set_boards()
-controller.utility_file = os.path.join(azcam.db.datafolder, "dspcode", "dsputility/util1.lod")
 controller.pci_file = os.path.join(azcam.db.datafolder, "dspcode", "dsppci", "pci1.lod")
 controller.timing_file = os.path.join(
     azcam.db.datafolder, "dspcode", "dsptiming", "tim1_config3.lod"
 )
+controller.utility_file = os.path.join(azcam.db.datafolder, "dspcode", "dsputility/util1.lod")
 controller.video_gain = 1
 controller.video_speed = 1
 if lab:
