@@ -20,7 +20,7 @@ from azcam.tools.telescope import Telescope
 from azcam_fastapi.fastapi_server import WebServer
 from azcam_webtools.status.status import Status
 
-from azcam_bluechan.ice import ICE
+from azcam_bluechan.ccdacq import CCDACQ
 
 # ****************************************************************
 # parse command line arguments
@@ -108,6 +108,7 @@ controller.video_gain = 1
 controller.video_speed = 1
 if lab:
     controller.camserver.set_server("localhost", 2405)
+    #controller.camserver.set_server("conserver7", 2405)
 else:
     controller.camserver.set_server("localhost", 2405)
 
@@ -128,7 +129,7 @@ exposure.send_image = 1
 remote_imageserver_host = "xxx"
 imagefolder = "/data/bluechan"
 azcam.db.servermode = "bluechan"
-sendimage.set_remote_imageserver(remote_imageserver_host, remote_imageserver_port, "ice")
+sendimage.set_remote_imageserver(remote_imageserver_host, remote_imageserver_port, "ccdacq")
 exposure.filetype = exposure.filetypes["FITS"]
 exposure.image.filetype = exposure.filetypes["FITS"]
 exposure.display_image = 0
@@ -183,10 +184,10 @@ system.set_keyword("DEWAR", "BlueChanDewar", "Dewar name")
 display = Ds9Display()
 
 # ****************************************************************
-# ICE commands
+# ccdacq commands
 # ****************************************************************
-ice = ICE()
-azcam.db.tools["ice"] = ice
+ccdacq = CCDACQ()
+azcam.db.tools["ccdacq"] = ccdacq
 
 # ****************************************************************
 # read par file
@@ -203,7 +204,7 @@ cmdserver.case_insensitive = 1
 azcam.log(f"Starting cmdserver - listening on port {cmdserver.port}")
 # cmdserver.welcome_message = "Welcome - azcam-itl server"
 cmdserver.start()
-cmdserver.default_tool = "ice"
+cmdserver.default_tool = "ccdacq"
 
 # ****************************************************************
 # web server

@@ -1,7 +1,7 @@
 # Exposure class for ARC controllers using Skip Schaller's ICE package.
 # A controller object must be defined before loading this module.
 # Commands followed by '1' return immediately after starting the base command in a new thread.
-# 18Jul13 last change MPL
+# 01Oct13 last change MPL
 
 import string,threading,socket,numpy
 from AzCamServerCommands import *
@@ -22,84 +22,6 @@ class Exposure(ExposureClass.ExposureClass):
     
         ## exposure flag defining state of current exposure
         self.ExposureFlag=self.EF_NONE
-
-        ## current image type, 'zero', 'object', 'dark', 'tdi', 'flat', 'ramp', etc
-        self.ImageType='zero'            
-        ## supported ImageTypes
-        self.ImageTypes=['zero','object','flat','dark','ramp']
-        ## dictionary of shutter states for ImageTypes {ImageType:ShutterState}
-        self.ShutterDict={'zero':'close','object':'open','flat':'open','dark':'close','ramp':'open'}
-        ## True to flush detector before exposures
-        self.FlushArray=1
-        ## True to display an image after readout
-        self.DisplayImage=0
-        ## True to analyze an image after readout
-        self.AnalyzeImage=0
-        ## GuideMode flag, 0=not in guide mode, 1=LBT, 2=SOguider, 2=ITLguider
-        self.GuideMode=0
-        ## TdiMode flag, 0=not in TDI mode, 1=TDI mode
-        self.TdiMode=0
-        ## true to enable updating the AzCam web server status page after each exposure
-        self.WebUpdate=0
-        ## True when exposure type is a comparision, to turn on comp lamps
-        self.CompExposure=0
-        ## True when in a comparision exposure sequence so lamps stay on
-        self.CompSequence=0
-        ## True when initialized
-        self.Initialized=0
-
-        ## requested exposure time in seconds
-        self.ExposureTime=1.0
-        ## remaining exposure time in seconds for an exposure in progress
-        self.ExposureTimeRemaining=0.0
-        ## actual elapsed exposure time in seconds of last/current exposure
-        self.ExposureTimeActual=0.0
-        ## exposure time saved for each exposure, used for zeros
-        self.ExposureTimeSaved=0.0
-        ## total time in seconds an exposure was paused
-        self.PausedTime=0.0
-        ## starting clock paused time of exposure
-        self.PausedTimeStart=0.0
-        ## actual elapsed dark time of last/current exposure
-        self.DarkTime=0.0
-        ## starting clock dark time of exposure
-        self.DarkTimeStart=0.0
-
-        ## True when in an exposure sequence
-        self.isExposureSequence=0        
-        ## current exposure sequence number
-        self.ExposureSequenceNumber=1
-        ## total number of exposures in sequence
-        self.ExposureSequenceTotal=1
-        ## delay between sequence exposures in seconds 
-        self.ExposureSequenceDelay=0.0
-
-        ## remaining number of pixels to read for an exposure in progress
-        self.PixelsRemaining=0
-
-        ## True to record header keywords during an exposure, for speed
-        self.SaveKeywords=1
-
-        # True to save image file after exposure
-        self.SaveFile=1
-
-        ## Exposure title
-        self.Title=''
-
-        ## True to make image title the same as image type
-        self.AutoTitle=0
-
-        ## deinterlace mode; 1 = generic mode; x = ODI mode
-        self.DeinterlaceMode = 1
-
-        ## True to send complete image to remote image server
-        self.RemoteImageServer=0
-        
-        ## temporary image files
-        self.TempImageFile=''
-        self.TempDisplayFile=''
-	
-	self.Initialized=0
         
     # ******************************************************************************
     #   exposure control

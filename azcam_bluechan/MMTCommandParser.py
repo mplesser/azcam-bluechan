@@ -1,9 +1,8 @@
-# MMTCommandParser.py
-# 14Aug12 last change MPL
-# This version for AzCam 5.0
+# MMTCommandParser for ccdacq
+# 21Jul14 last change MPL
 
 import shlex
-from AzCamCommands import *
+from AzCamServerCommands import *
 
 def MMTCommandParser(Command):
     """
