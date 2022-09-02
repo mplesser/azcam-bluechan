@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "azcam-bluechan"
+version = "22.2"
+description = "Azcam extension for MMTO Spectrograph BlueChan camera"
+authors = ["Michael Lesser <mlesser@arizona.edu>"]
+license = "LICENSE"
+readme = "README.md"
+keywords=["ccd", "imaging", "astronomy", "sensors"]
+repository = "https://github.com/mplesser/azcam-bluechan/"
+documentation = "https://mplesser.github.io/azcam/"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+ipython = "*"
+rich = "*"
+azcam = { git = "https://github.com/mplesser/azcam.git", branch = "main" }
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
