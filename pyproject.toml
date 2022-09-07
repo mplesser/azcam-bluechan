@@ -14,6 +14,12 @@ python = "^3.9"
 ipython = "*"
 rich = "*"
 azcam = "*"
+azcam-arc = "*"
+azcam-ds9 = "*"
+azcam-imageserver = "*"
+azcam-webtools = "*"
+azcam-monitor = "*"
+azcam-fastapi = "*"
 
 [tool.poetry.dev-dependencies]
 
