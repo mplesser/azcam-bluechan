@@ -4,7 +4,7 @@ version = "22.2.1"
 description = "Azcam extension for MMTO Spectrograph BlueChan camera"
 license = {file ="LICENSE"}
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.8"
 keywords=["ccd", "imaging", "astronomy", "sensors"]
 authors = [{name="Michael Lesser"},{email = "mlesser@arizona.edu"}]
 
@@ -12,12 +12,6 @@ dependencies = [
     "ipython",
     "rich",
     "azcam",
-    "azcam-arc",
-    "azcam-ds9",
-    "azcam-imageserver",
-    "azcam-webtools",
-    "azcam-monitor",
-    "azcam-fastapi",
 ]
 
 [project.urls]
