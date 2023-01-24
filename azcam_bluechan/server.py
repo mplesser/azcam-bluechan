@@ -6,8 +6,8 @@ import sys
 import azcam
 import azcam.server
 import azcam.shortcuts
-from azcam.tools.cmdserver import CommandServer
-from azcam.tools.system import System
+from azcam.cmdserver import CommandServer
+from azcam.system import System
 from azcam.tools.arc.controller_arc import ControllerArc
 from azcam.tools.arc.exposure_arc import ExposureArc
 from azcam.tools.arc.tempcon_arc import TempConArc
@@ -190,8 +190,8 @@ azcam.db.tools["ccdacq"] = ccdacq
 # ****************************************************************
 # read par file
 # ****************************************************************
-azcam.db.tools["parameters"].read_parfile(parfile)
-azcam.db.tools["parameters"].update_pars(0, "azcamserver")
+azcam.db.parameters.read_parfile(parfile)
+azcam.db.parameters.update_pars(0, "azcamserver")
 
 # ****************************************************************
 # define and start command server

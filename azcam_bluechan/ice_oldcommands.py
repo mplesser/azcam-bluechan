@@ -59,10 +59,10 @@ class ICE(object):
         filename is remote filename (do not use periods)
         """
 
-        azcam.db.tools["parameters"].set_par("imagetest", 0)
-        azcam.db.tools["parameters"].set_par("imageautoname", 0)
-        azcam.db.tools["parameters"].set_par("imageincludesequencenumber", 0)
-        azcam.db.tools["parameters"].set_par("imageautoincrementsequencenumber", 0)
+        azcam.db.parameters.set_par("imagetest", 0)
+        azcam.db.parameters.set_par("imageautoname", 0)
+        azcam.db.parameters.set_par("imageincludesequencenumber", 0)
+        azcam.db.parameters.set_par("imageautoincrementsequencenumber", 0)
 
         azcam.db.tools["exposure"].set_filename(filename)
         azcam.db.tools["exposure"].expose(exposuretime, "object", "ICE image")
@@ -77,10 +77,10 @@ class ICE(object):
         filename is remote filename (do not use periods)
         """
 
-        azcam.db.tools["parameters"].set_par("imagetest", 0)
-        azcam.db.tools["parameters"].set_par("imageautoname", 0)
-        azcam.db.tools["parameters"].set_par("imageincludesequencenumber", 0)
-        azcam.db.tools["parameters"].set_par("imageautoincrementsequencenumber", 0)
+        azcam.db.parameters.set_par("imagetest", 0)
+        azcam.db.parameters.set_par("imageautoname", 0)
+        azcam.db.parameters.set_par("imageincludesequencenumber", 0)
+        azcam.db.parameters.set_par("imageautoincrementsequencenumber", 0)
 
         azcam.db.tools["exposure"].set_filename(filename)
         azcam.db.tools["exposure"].expose1(exposuretime, "object", "ICE image")
