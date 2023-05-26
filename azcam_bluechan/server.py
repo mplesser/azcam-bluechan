@@ -4,19 +4,19 @@ import os
 import sys
 
 import azcam
-import azcam.server
-import azcam.shortcuts
-from azcam.cmdserver import CommandServer
-from azcam.system import System
-from azcam.tools.arc.controller_arc import ControllerArc
-from azcam.tools.arc.exposure_arc import ExposureArc
-from azcam.tools.arc.tempcon_arc import TempConArc
+import azcam_server.server
+import azcam_server.shortcuts
+from azcam_server.cmdserver import CommandServer
+from azcam.header import System
+from azcam_server.tools.arc.controller_arc import ControllerArc
+from azcam_server.tools.arc.exposure_arc import ExposureArc
+from azcam_server.tools.arc.tempcon_arc import TempConArc
 from azcam.tools.ds9display import Ds9Display
 from azcam.tools.sendimage import SendImage
 from azcam.tools.instrument import Instrument
 from azcam.tools.telescope import Telescope
-from azcam.tools.webserver.fastapi_server import WebServer
-from azcam.tools.webtools.status.status import Status
+from azcam_server.tools.webserver.fastapi_server import WebServer
+from azcam_server.tools.webtools.status.status import Status
 
 from azcam_monitor.monitorinterface import AzCamMonitorInterface
 from azcam_bluechan.ccdacq import CCDACQ
@@ -107,7 +107,7 @@ controller.video_gain = 1
 controller.video_speed = 1
 if lab:
     controller.camserver.set_server("localhost", 2405)
-    #controller.camserver.set_server("conserver7", 2405)
+    # controller.camserver.set_server("conserver7", 2405)
 else:
     controller.camserver.set_server("localhost", 2405)
 
