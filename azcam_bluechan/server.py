@@ -11,10 +11,10 @@ from azcam.header import System
 from azcam_server.tools.arc.controller_arc import ControllerArc
 from azcam_server.tools.arc.exposure_arc import ExposureArc
 from azcam_server.tools.arc.tempcon_arc import TempConArc
-from azcam.tools.ds9display import Ds9Display
-from azcam.tools.sendimage import SendImage
-from azcam.tools.instrument import Instrument
-from azcam.tools.telescope import Telescope
+from azcam_server.tools.ds9display import Ds9Display
+from azcam_server.tools.sendimage import SendImage
+from azcam_server.tools.instrument import Instrument
+from azcam_server.tools.telescope import Telescope
 from azcam_server.tools.webserver.fastapi_server import WebServer
 from azcam_server.tools.webtools.status.status import Status
 
