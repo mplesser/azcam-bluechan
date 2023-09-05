@@ -84,7 +84,9 @@ CSS = 0
 RTS2 = 0
 NORMAL = 0
 template = os.path.join(azcam.db.datafolder, "templates", "fits_template_bluechan.txt")
-parfile = os.path.join(azcam.db.datafolder, "parameters", "parameters_server_bluechan.ini")
+parfile = os.path.join(
+    azcam.db.datafolder, "parameters", "parameters_server_bluechan.ini"
+)
 NORMAL = 1
 cmdport = 2402
 azcam.db.servermode = "bluechan"
@@ -102,7 +104,9 @@ controller.pci_file = os.path.join(azcam.db.datafolder, "dspcode", "dsppci", "pc
 controller.timing_file = os.path.join(
     azcam.db.datafolder, "dspcode", "dsptiming", "tim1_config3.lod"
 )
-controller.utility_file = os.path.join(azcam.db.datafolder, "dspcode", "dsputility/util1.lod")
+controller.utility_file = os.path.join(
+    azcam.db.datafolder, "dspcode", "dsputility/util1.lod"
+)
 controller.video_gain = 1
 controller.video_speed = 1
 if lab:
@@ -128,7 +132,9 @@ exposure.send_image = 1
 remote_imageserver_host = "pixel2"
 imagefolder = "/data/bluechan"
 azcam.db.servermode = "bluechan"
-sendimage.set_remote_imageserver(remote_imageserver_host, remote_imageserver_port, "ccdacq")
+sendimage.set_remote_imageserver(
+    remote_imageserver_host, remote_imageserver_port, "ccdacq"
+)
 exposure.filetype = exposure.filetypes["FITS"]
 exposure.image.filetype = exposure.filetypes["FITS"]
 exposure.display_image = 0
@@ -217,7 +223,7 @@ webstatus.initialize()
 # ****************************************************************
 # GUIs
 # ****************************************************************
-if 0:
+if 1:
     import azcam_bluechan.start_azcamtool
 
 # ****************************************************************
