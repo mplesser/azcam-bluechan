@@ -18,7 +18,7 @@ from azcam_server.tools.telescope import Telescope
 from azcam_server.tools.webserver.fastapi_server import WebServer
 from azcam_server.tools.webtools.status.status import Status
 
-from azcam_monitor.monitorinterface import AzCamMonitorInterface
+from azcam_server.monitor.monitorinterface import AzCamMonitorInterface
 from azcam_bluechan.ccdacq import CCDACQ
 
 # ****************************************************************
