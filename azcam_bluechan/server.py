@@ -54,6 +54,7 @@ if option == "menu":
 # define folders for system
 # ****************************************************************
 azcam.db.systemname = "bluechan"
+azcam.db.servermode = azcam.db.systemname
 
 azcam.db.systemfolder = os.path.dirname(__file__)
 azcam.db.systemfolder = azcam.utils.fix_path(azcam.db.systemfolder)
@@ -90,7 +91,6 @@ parfile = os.path.join(
 )
 NORMAL = 1
 cmdport = 2402
-azcam.db.servermode = "bluechan"
 
 # ****************************************************************
 # controller
@@ -132,7 +132,6 @@ sendimage = SendImage()
 exposure.send_image = 1
 remote_imageserver_host = "pixel2"
 imagefolder = "/data/bluechan"
-azcam.db.servermode = "bluechan"
 sendimage.set_remote_imageserver(
     remote_imageserver_host, remote_imageserver_port, "ccdacq"
 )
