@@ -21,6 +21,7 @@ from azcam.server.tools.webtools.status.status import Status
 
 from azcam.server.monitor.monitorinterface import AzCamMonitorInterface
 from azcam_bluechan.ccdacq import CCDACQ
+from azcam_bluechan.sendimage_ccdacq import sendimage_ccdacq
 
 # ****************************************************************
 # parse command line arguments
@@ -135,6 +136,7 @@ imagefolder = "/data/bluechan"
 sendimage.set_remote_imageserver(
     remote_imageserver_host, remote_imageserver_port, "ccdacq"
 )
+exposure.sendimage.imageserver_send = sendimage_ccdacq
 exposure.filetype = exposure.filetypes["FITS"]
 exposure.image.filetype = exposure.filetypes["FITS"]
 exposure.display_image = 0
