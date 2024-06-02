@@ -5,21 +5,21 @@ import sys
 
 import azcam
 import azcam.utils
-import azcam.server.server
-import azcam.server.shortcuts
-from azcam.server.cmdserver import CommandServer
+import azcam.server
+import azcam.shortcuts
+from azcam.cmdserver import CommandServer
 from azcam.header import System
-from azcam.server.tools.arc.controller_arc import ControllerArc
-from azcam.server.tools.arc.exposure_arc import ExposureArc
-from azcam.server.tools.arc.tempcon_arc import TempConArc
-from azcam.server.tools.ds9display import Ds9Display
-from azcam.server.tools.sendimage import SendImage
-from azcam.server.tools.instrument import Instrument
-from azcam.server.tools.telescope import Telescope
-from azcam.server.tools.webserver.fastapi_server import WebServer
-from azcam.server.tools.webtools.status.status import Status
+from azcam.tools.arc.controller_arc import ControllerArc
+from azcam.tools.arc.exposure_arc import ExposureArc
+from azcam.tools.arc.tempcon_arc import TempConArc
+from azcam.tools.ds9display import Ds9Display
+from azcam.tools.sendimage import SendImage
+from azcam.tools.instrument import Instrument
+from azcam.tools.telescope import Telescope
+from azcam.tools.webserver.fastapi_server import WebServer
+from azcam.tools.webtools.status.status import Status
 
-from azcam.server.monitor.monitorinterface import AzCamMonitorInterface
+from azcam.monitor.monitorinterface import AzCamMonitorInterface
 from azcam_bluechan.ccdacq import CCDACQ
 from azcam_bluechan.sendimage_ccdacq import sendimage_ccdacq
 

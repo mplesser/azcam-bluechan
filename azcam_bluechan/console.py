@@ -6,9 +6,9 @@ import threading
 
 import azcam
 import azcam.utils
-import azcam.console
-import azcam.console.shortcuts
-from azcam.server.tools.ds9display import Ds9Display
+import azcam_console.console
+import azcam_console.shortcuts
+from azcam.tools.ds9display import Ds9Display
 
 try:
     i = sys.argv.index("-datafolder")
@@ -58,7 +58,7 @@ dthread.start()  # thread just for speed
 # ****************************************************************
 # console tools
 # ****************************************************************
-from azcam.console.tools import create_console_tools
+from azcam_console.tools import create_console_tools
 
 create_console_tools()
 
