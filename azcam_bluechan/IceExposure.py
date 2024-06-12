@@ -341,7 +341,7 @@ class Exposure(ExposureClass.ExposureClass):
 
         # set comp lamps, turn on, set keyword
         GetObject('controller').header.DeleteKeyword('COMPLAMP')
-        if self.CompExposure and GetObject('instrument').Enabled:
+        if self.CompExposure and GetObject('instrument').is_enabled:
             if self.CompSequence:
                 lampnames = string.join(GetObject('instrument').GetActiveComps()[1:],' ')
                 GetObject('controller').header.SetKeyword('COMPLAMP',lampnames,'Comp lamp names',str)
@@ -478,7 +478,7 @@ class Exposure(ExposureClass.ExposureClass):
             time.sleep(.5)  # delay for voltages to come up
 
         # reset comp lamps
-        if self.CompExposure and GetObject('instrument').Enabled and not self.CompSequence:
+        if self.CompExposure and GetObject('instrument').is_enabled and not self.CompSequence:
             if GetObject('instrument').ShutterStrobeInstrument:
                 if self.ImageType.lower()=='fe55':
                     time.sleep(3)
@@ -594,7 +594,7 @@ class Exposure(ExposureClass.ExposureClass):
         GetObject('controller').header.SetKeyword('DARKTIME',dt,'Dark time (seconds)',float)
 
         if GetObject('controller') !=0: 
-            if GetObject('controller').Enabled:
+            if GetObject('controller').is_enabled:
                 self.image.header.CopyAllItems(GetObject('controller'))
 
         # copy all header items
@@ -604,19 +604,19 @@ class Exposure(ExposureClass.ExposureClass):
             self.image.header.CopyAllItems(GetObject('focalplane'))        
             
             try:
-                if GetObject('instrument').Enabled:
+                if GetObject('instrument').is_enabled:
                     self.image.header.CopyAllItems(GetObject('instrument'))
             except Exception,message:
                 pass
 
             try:
-                if GetObject('telescope').Enabled:
+                if GetObject('telescope').is_enabled:
                     self.image.header.CopyAllItems(GetObject('telescope'))
             except Exception,message:
                 pass
 
             try:
-                if GetObject('tempcon').Enabled:
+                if GetObject('tempcon').is_enabled:
                     self.image.header.CopyAllItems(GetObject('tempcon'))      
             except Exception,message:
                 pass
