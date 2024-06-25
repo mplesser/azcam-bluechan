@@ -188,6 +188,7 @@ system.set_keyword("DEWAR", "BlueChanDewar", "Dewar name")
 # display
 # ****************************************************************
 display = Ds9Display()
+display.initialize()
 
 # ****************************************************************
 # ccdacq commands

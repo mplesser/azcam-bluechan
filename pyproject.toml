@@ -1,7 +1,7 @@
 [project]
 name = "azcam-bluechan"
 version = "24.0"
-description = "Azcam extension for MMTO Spectrograph BlueChan camera"
+description = "Azcam environment for MMTO Spectrograph BlueChan camera"
 license = { file = "LICENSE" }
 readme = "README.md"
 requires-python = ">=3.10"
