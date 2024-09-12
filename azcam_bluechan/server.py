@@ -164,7 +164,6 @@ def setup():
         "extnum": [1],
         "detnum": [1],
         "detpos": [[1, 1]],
-        "detgap": [[0.0, 0.0]],
         "amp_position": [[1, 1]],
         "amp_pixel_position": [[1, 1]],
         "ctype": ["LINEAR", "LINEAR"],
